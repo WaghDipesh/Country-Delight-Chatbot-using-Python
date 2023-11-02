@@ -1,0 +1,46 @@
+#importing the required modules from chatterbot import ChatBot from chatterbot.trainers import ListTrainer 
+#creating a chatbot 
+myBot=ChatBot(name='orderbot',read_only=True,logic_adapters=['chatterbot.logic.Mathema ticalEvaluation','chatterbot.logic.BestMatch']) 
+#training the chatbot small_convo1=[ 
+'How can I sign up for Country Delight?', 
+'You can sign up on our website or app.', 
+] 
+small_convo2=[ 
+'What products does Country Delight offer?', 
+'We offer fresh milk, dairy, and grocery products.', 
+] 
+small_convo3=[ 
+'Is the milk organic? ', 
+'Yes, our milk is sourced from organic farms', 
+] 
+small_convo4=[ 
+'Can I customize my milk delivery schedule? ', 
+'Absolutely, you can choose your preferred delivery frequency.', 
+] 
+small_convo5=[ 
+'How can I modify my subscription?', 
+'You can easily make changes in the app or on our website.', 
+] 
+small_convo6=[ 
+'What is the delivery radius for Country Delight? ', 
+'We serve select cities and areas, please check our coverage on the app.', 
+] 
+small_convo7=[ 
+'Is there a minimum order requirement?', 
+'Yes, we have a minimum order value for delivery.', 
+] 
+small_convo8=[ 
+'How do I contact customer support? ', 
+'You can reach our customer support through the app or website.', 
+] 
+small_convo9=[ 
+'Are there any ongoing promotions or discounts? ', 
+': Check the app for the latest offers and promotions.', 
+] 
+small_convo10=[ 
+'What is the delivery time window?', 
+'We offer convenient delivery slots; choose one that suits you during checkout.', 
+] 
+#using the ListTrainer class list_trainee=ListTrainer(myBot) for i in 
+(small_convo1,small_convo2,small_convo3,small_convo4,small_convo5,small_convo6,smal l_convo7,small_convo8,small_convo9,small_convo10): 
+    list_trainee.train(i) 
